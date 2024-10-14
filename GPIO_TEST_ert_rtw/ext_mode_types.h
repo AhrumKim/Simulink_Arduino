@@ -5,11 +5,11 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * Code generation for model "GPIO_test".
+ * Code generation for model "GPIO_TEST".
  *
- * Model version              : 1.1
+ * Model version              : 1.2
  * Simulink Coder version : 23.2 (R2023b) 01-Aug-2023
- * C source code generated on : Fri Oct 11 14:35:12 2024
+ * C source code generated on : Mon Oct 14 13:46:13 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -49,7 +49,7 @@ typedef real_T extmodeClassicTriggerSignal_T;
 #define EXTMODE_MAX_BASE_RATE_SIMULATION_TIME MAX_uint32_T
 
 /** External Mode Step Size in microseconds */
-#define EXTMODE_STEP_SIZE_IN_MICROSECONDS 100000
+#define EXTMODE_STEP_SIZE_IN_MICROSECONDS 200000
 
 /** External Mode Base rate event id */
 #define EXTMODE_BASE_RATE_EVENT_ID     0

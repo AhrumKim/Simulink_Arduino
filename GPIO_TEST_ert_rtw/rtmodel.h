@@ -5,11 +5,11 @@
  *
  * File: rtmodel.h
  *
- * Code generated for Simulink model 'GPIO_test'.
+ * Code generated for Simulink model 'GPIO_TEST'.
  *
- * Model version                  : 1.1
+ * Model version                  : 1.2
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri Oct 11 14:35:12 2024
+ * C/C++ source code generated on : Mon Oct 14 13:46:13 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -19,7 +19,7 @@
 
 #ifndef RTW_HEADER_rtmodel_h_
 #define RTW_HEADER_rtmodel_h_
-#include "GPIO_test.h"
+#include "GPIO_TEST.h"
 #endif                                 /* RTW_HEADER_rtmodel_h_ */
 
 /*

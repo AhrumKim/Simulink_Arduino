@@ -1,0 +1,6 @@
+clear all
+close all
+clc
+load testset3.mat
+
+plot(PosLon(min(find(PosLon==0)):end), PosLon)

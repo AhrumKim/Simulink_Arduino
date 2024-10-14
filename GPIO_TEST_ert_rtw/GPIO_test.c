@@ -3,13 +3,13 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * File: GPIO_test.c
+ * File: GPIO_TEST.c
  *
- * Code generated for Simulink model 'GPIO_test'.
+ * Code generated for Simulink model 'GPIO_TEST'.
  *
- * Model version                  : 1.1
+ * Model version                  : 1.2
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri Oct 11 14:35:12 2024
+ * C/C++ source code generated on : Mon Oct 14 13:46:13 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -17,52 +17,120 @@
  * Validation result: Not run
  */
 
-#include "GPIO_test.h"
+#include "GPIO_TEST.h"
+#include "GPIO_TEST_private.h"
 #include "rtwtypes.h"
-#include "GPIO_test_private.h"
+#include "rt_nonfinite.h"
 #include <math.h>
+#include "xcp.h"
+#include "ext_mode.h"
+
+extmodeSimulationTime_T currentTime = (extmodeSimulationTime_T) 0;
 
 /* Block signals (default storage) */
-B_GPIO_test_T GPIO_test_B;
+B_GPIO_TEST_T GPIO_TEST_B;
 
 /* Block states (default storage) */
-DW_GPIO_test_T GPIO_test_DW;
+DW_GPIO_TEST_T GPIO_TEST_DW;
 
 /* Real-time model */
-static RT_MODEL_GPIO_test_T GPIO_test_M_;
-RT_MODEL_GPIO_test_T *const GPIO_test_M = &GPIO_test_M_;
-static void rate_monotonic_scheduler(void);
+static RT_MODEL_GPIO_TEST_T GPIO_TEST_M_;
+RT_MODEL_GPIO_TEST_T *const GPIO_TEST_M = &GPIO_TEST_M_;
 
-/*
- * Set which subrates need to run this base step (base rate always runs).
- * This function must be called prior to calling the model step function
- * in order to remember which rates need to run this base step.  The
- * buffering of events allows for overlapping preemption.
- */
-void GPIO_test_SetEventsForThisBaseStep(boolean_T *eventFlags)
+/* Callback for Hardware Interrupt Block: '<Root>/External Interrupt' */
+void MW_ISR_2(void)
 {
-  /* Task runs when its counter is zero, computed via rtmStepTask macro */
-  eventFlags[1] = ((boolean_T)rtmStepTask(GPIO_test_M, 1));
-}
+  /* Call the system: <Root>/Function-Call Subsystem */
+  {
+    /* Reset subsysRan breadcrumbs */
+    srClearBC(GPIO_TEST_DW.FunctionCallSubsystem_SubsysRan);
 
-/*
- *         This function updates active task flag for each subrate
- *         and rate transition flags for tasks that exchange data.
- *         The function assumes rate-monotonic multitasking scheduler.
- *         The function must be called at model base rate so that
- *         the generated code self-manages all its subrates and rate
- *         transition flags.
- */
-static void rate_monotonic_scheduler(void)
-{
-  /* Compute which subrates run during the next base time step.  Subrates
-   * are an integer multiple of the base rate counter.  Therefore, the subtask
-   * counter is reset when it reaches its limit (zero means run).
-   */
-  (GPIO_test_M->Timing.TaskCounters.TID[1])++;
-  if ((GPIO_test_M->Timing.TaskCounters.TID[1]) > 19) {/* Sample time: [2.0s, 0.0s] */
-    GPIO_test_M->Timing.TaskCounters.TID[1] = 0;
+    /* S-Function (arduinoextint_sfcn): '<Root>/External Interrupt' */
+
+    /* Output and update for function-call system: '<Root>/Function-Call Subsystem' */
+    {
+      /* local block i/o variables */
+      real_T rtb_Sum;
+      real_T rtb_DiscreteStateSpace;
+
+      /* Asynchronous task (with no priority assigned)
+       * reads absolute time */
+      switch (GPIO_TEST_M->Timing.rtmDbBufWriteBuf1) {
+       case 0:
+        GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 1;
+        break;
+
+       case 1:
+        GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 0;
+        break;
+
+       default:
+        GPIO_TEST_M->Timing.rtmDbBufReadBuf1 =
+          GPIO_TEST_M->Timing.rtmDbBufLastBufWr1;
+        break;
+      }
+
+      GPIO_TEST_M->Timing.clockTick1 = GPIO_TEST_M->
+        Timing.rtmDbBufClockTick1[GPIO_TEST_M->Timing.rtmDbBufReadBuf1];
+      GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 0xFF;
+
+      /* DiscreteStateSpace: '<S2>/Discrete State Space' */
+      {
+        rtb_DiscreteStateSpace = GPIO_TEST_P.DiscreteStateSpace_C*
+          GPIO_TEST_DW.DiscreteStateSpace_DSTATE;
+      }
+
+      /* Sum: '<S1>/Sum' incorporates:
+       *  Constant: '<S1>/Constant'
+       */
+      rtb_Sum = GPIO_TEST_P.Constant_Value + rtb_DiscreteStateSpace;
+
+      /* MATLAB Function: '<S1>/MATLAB Function' */
+      GPIO_TEST_B.y = rtb_Sum;
+
+      /* Update for DiscreteStateSpace: '<S2>/Discrete State Space' */
+      {
+        GPIO_TEST_DW.DiscreteStateSpace_DSTATE = rtb_Sum +
+          (GPIO_TEST_P.DiscreteStateSpace_A)*
+          GPIO_TEST_DW.DiscreteStateSpace_DSTATE;
+      }
+
+      GPIO_TEST_DW.FunctionCallSubsystem_SubsysRan = 4;
+    }
+
+    /* End of Outputs for S-Function (arduinoextint_sfcn): '<Root>/External Interrupt' */
+
+    /* RateTransition: '<Root>/Rate Transition' */
+    switch (GPIO_TEST_DW.RateTransition_read_buf) {
+     case 0:
+      GPIO_TEST_DW.RateTransition_write_buf = 1;
+      break;
+
+     case 1:
+      GPIO_TEST_DW.RateTransition_write_buf = 0;
+      break;
+
+     default:
+      GPIO_TEST_DW.RateTransition_write_buf = (int8_T)
+        (GPIO_TEST_DW.RateTransition_last_buf_wr == 0);
+      break;
+    }
+
+    if (GPIO_TEST_DW.RateTransition_write_buf != 0) {
+      GPIO_TEST_DW.RateTransition_Buffer1 = GPIO_TEST_B.y;
+    } else {
+      GPIO_TEST_DW.RateTransition_Buffer0 = GPIO_TEST_B.y;
+    }
+
+    GPIO_TEST_DW.RateTransition_last_buf_wr =
+      GPIO_TEST_DW.RateTransition_write_buf;
+    GPIO_TEST_DW.RateTransition_write_buf = -1;
+
+    /* End of RateTransition: '<Root>/Rate Transition' */
   }
+
+  currentTime = (extmodeSimulationTime_T) GPIO_TEST_M->Timing.clockTick0;
+  extmodeEvent(1,currentTime);
 }
 
 real_T rt_roundd_snf(real_T u)
@@ -83,61 +151,66 @@ real_T rt_roundd_snf(real_T u)
   return y;
 }
 
-/* Model step function for TID0 */
-void GPIO_test_step0(void)             /* Sample time: [0.1s, 0.0s] */
-{
-  boolean_T c_value;
-
-  {                                    /* Sample time: [0.1s, 0.0s] */
-    rate_monotonic_scheduler();
-  }
-
-  /* MATLABSystem: '<Root>/Digital Input1' */
-  if (GPIO_test_DW.obj.SampleTime != GPIO_test_P.DigitalInput1_SampleTime) {
-    GPIO_test_DW.obj.SampleTime = GPIO_test_P.DigitalInput1_SampleTime;
-  }
-
-  c_value = readDigitalPin(3);
-
-  /* Logic: '<Root>/NOT' incorporates:
-   *  MATLABSystem: '<Root>/Digital Input1'
-   * */
-  GPIO_test_B.NOT = !c_value;
-
-  /* MATLABSystem: '<Root>/Digital Output1' */
-  writeDigitalPin(12, (uint8_T)GPIO_test_B.NOT);
-
-  /* Update absolute time */
-  /* The "clockTick0" counts the number of times the code of this task has
-   * been executed. The absolute time is the multiplication of "clockTick0"
-   * and "Timing.stepSize0". Size of "clockTick0" ensures timer will not
-   * overflow during the application lifespan selected.
-   */
-  GPIO_test_M->Timing.taskTime0 =
-    ((time_T)(++GPIO_test_M->Timing.clockTick0)) * GPIO_test_M->Timing.stepSize0;
-}
-
-/* Model step function for TID1 */
-void GPIO_test_step1(void)             /* Sample time: [2.0s, 0.0s] */
+/* Model step function */
+void GPIO_TEST_step(void)
 {
   real_T tmp;
+  uint16_T b_varargout_1;
   uint8_T tmp_0;
 
-  /* DiscretePulseGenerator: '<Root>/Pulse Generator' */
-  GPIO_test_B.PulseGenerator = (GPIO_test_DW.clockTickCounter <
-    GPIO_test_P.PulseGenerator_Duty) && (GPIO_test_DW.clockTickCounter >= 0L) ?
-    GPIO_test_P.PulseGenerator_Amp : 0.0;
-
-  /* DiscretePulseGenerator: '<Root>/Pulse Generator' */
-  if (GPIO_test_DW.clockTickCounter >= GPIO_test_P.PulseGenerator_Period - 1.0)
-  {
-    GPIO_test_DW.clockTickCounter = 0L;
-  } else {
-    GPIO_test_DW.clockTickCounter++;
+  /* MATLABSystem: '<Root>/Analog Input' */
+  if (GPIO_TEST_DW.obj.SampleTime != GPIO_TEST_P.AnalogInput_SampleTime) {
+    GPIO_TEST_DW.obj.SampleTime = GPIO_TEST_P.AnalogInput_SampleTime;
   }
 
-  /* MATLABSystem: '<Root>/Digital Output' */
-  tmp = rt_roundd_snf(GPIO_test_B.PulseGenerator);
+  GPIO_TEST_DW.obj.AnalogInDriverObj.MW_ANALOGIN_HANDLE = MW_AnalogIn_GetHandle
+    (54UL);
+  MW_AnalogInSingle_ReadResult
+    (GPIO_TEST_DW.obj.AnalogInDriverObj.MW_ANALOGIN_HANDLE, &b_varargout_1,
+     MW_ANALOGIN_UINT16);
+
+  /* DataTypeConversion: '<Root>/Data Type Conversion' incorporates:
+   *  Gain: '<Root>/Gain'
+   *  MATLABSystem: '<Root>/Analog Input'
+   * */
+  GPIO_TEST_B.DataTypeConversion = (uint8_T)(((uint32_T)GPIO_TEST_P.Gain_Gain *
+    b_varargout_1) >> 17);
+
+  /* MATLABSystem: '<Root>/PWM1' */
+  GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE = MW_PWM_GetHandle(11UL);
+  MW_PWM_SetDutyCycle(GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE, (real_T)
+                      GPIO_TEST_B.DataTypeConversion);
+
+  /* RateTransition: '<Root>/Rate Transition' */
+  switch (GPIO_TEST_DW.RateTransition_write_buf) {
+   case 0:
+    GPIO_TEST_DW.RateTransition_read_buf = 1;
+    break;
+
+   case 1:
+    GPIO_TEST_DW.RateTransition_read_buf = 0;
+    break;
+
+   default:
+    GPIO_TEST_DW.RateTransition_read_buf =
+      GPIO_TEST_DW.RateTransition_last_buf_wr;
+    break;
+  }
+
+  if (GPIO_TEST_DW.RateTransition_read_buf != 0) {
+    /* RateTransition: '<Root>/Rate Transition' */
+    GPIO_TEST_B.RateTransition = GPIO_TEST_DW.RateTransition_Buffer1;
+  } else {
+    /* RateTransition: '<Root>/Rate Transition' */
+    GPIO_TEST_B.RateTransition = GPIO_TEST_DW.RateTransition_Buffer0;
+  }
+
+  GPIO_TEST_DW.RateTransition_read_buf = -1;
+
+  /* End of RateTransition: '<Root>/Rate Transition' */
+
+  /* MATLABSystem: '<Root>/Digital Output1' */
+  tmp = rt_roundd_snf(GPIO_TEST_B.RateTransition);
   if (tmp < 256.0) {
     if (tmp >= 0.0) {
       tmp_0 = (uint8_T)tmp;
@@ -150,88 +223,178 @@ void GPIO_test_step1(void)             /* Sample time: [2.0s, 0.0s] */
 
   writeDigitalPin(13, tmp_0);
 
-  /* End of MATLABSystem: '<Root>/Digital Output' */
+  /* End of MATLABSystem: '<Root>/Digital Output1' */
+  {                                    /* Sample time: [0.2s, 0.0s] */
+  }
 
-  /* Update absolute time */
-  /* The "clockTick1" counts the number of times the code of this task has
-   * been executed. The resolution of this integer timer is 2.0, which is the step size
-   * of the task. Size of "clockTick1" ensures timer will not overflow during the
-   * application lifespan selected.
+  /* Update absolute time for base rate */
+  /* The "clockTick0" counts the number of times the code of this task has
+   * been executed. The absolute time is the multiplication of "clockTick0"
+   * and "Timing.stepSize0". Size of "clockTick0" ensures timer will not
+   * overflow during the application lifespan selected.
    */
-  GPIO_test_M->Timing.clockTick1++;
+  GPIO_TEST_M->Timing.taskTime0 =
+    ((time_T)(++GPIO_TEST_M->Timing.clockTick0)) * GPIO_TEST_M->Timing.stepSize0;
+  switch (GPIO_TEST_M->Timing.rtmDbBufReadBuf1) {
+   case 0:
+    GPIO_TEST_M->Timing.rtmDbBufWriteBuf1 = 1;
+    break;
+
+   case 1:
+    GPIO_TEST_M->Timing.rtmDbBufWriteBuf1 = 0;
+    break;
+
+   default:
+    GPIO_TEST_M->Timing.rtmDbBufWriteBuf1 =
+      !GPIO_TEST_M->Timing.rtmDbBufLastBufWr1;
+    break;
+  }
+
+  GPIO_TEST_M->Timing.rtmDbBufClockTick1[GPIO_TEST_M->Timing.rtmDbBufWriteBuf1] =
+    GPIO_TEST_M->Timing.clockTick0;
+  GPIO_TEST_M->Timing.rtmDbBufLastBufWr1 = GPIO_TEST_M->Timing.rtmDbBufWriteBuf1;
+  GPIO_TEST_M->Timing.rtmDbBufWriteBuf1 = 0xFF;
 }
 
 /* Model initialize function */
-void GPIO_test_initialize(void)
+void GPIO_TEST_initialize(void)
 {
   /* Registration code */
-  rtmSetTFinal(GPIO_test_M, -1);
-  GPIO_test_M->Timing.stepSize0 = 0.1;
+
+  /* initialize non-finites */
+  rt_InitInfAndNaN(sizeof(real_T));
+  rtmSetTFinal(GPIO_TEST_M, -1);
+  GPIO_TEST_M->Timing.stepSize0 = 0.2;
 
   /* External mode info */
-  GPIO_test_M->Sizes.checksums[0] = (2457707800U);
-  GPIO_test_M->Sizes.checksums[1] = (3003785801U);
-  GPIO_test_M->Sizes.checksums[2] = (2533988355U);
-  GPIO_test_M->Sizes.checksums[3] = (2630154994U);
+  GPIO_TEST_M->Sizes.checksums[0] = (2612801450U);
+  GPIO_TEST_M->Sizes.checksums[1] = (3074942484U);
+  GPIO_TEST_M->Sizes.checksums[2] = (1076021327U);
+  GPIO_TEST_M->Sizes.checksums[3] = (580580783U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[4];
-    GPIO_test_M->extModeInfo = (&rt_ExtModeInfo);
+    static const sysRanDType *systemRan[6];
+    GPIO_TEST_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
     systemRan[1] = &rtAlwaysEnabled;
     systemRan[2] = &rtAlwaysEnabled;
-    systemRan[3] = &rtAlwaysEnabled;
-    rteiSetModelMappingInfoPtr(GPIO_test_M->extModeInfo,
-      &GPIO_test_M->SpecialInfo.mappingInfo);
-    rteiSetChecksumsPtr(GPIO_test_M->extModeInfo, GPIO_test_M->Sizes.checksums);
-    rteiSetTPtr(GPIO_test_M->extModeInfo, rtmGetTPtr(GPIO_test_M));
+    systemRan[3] = (sysRanDType *)&GPIO_TEST_DW.FunctionCallSubsystem_SubsysRan;
+    systemRan[4] = (sysRanDType *)&GPIO_TEST_DW.FunctionCallSubsystem_SubsysRan;
+    systemRan[5] = &rtAlwaysEnabled;
+    rteiSetModelMappingInfoPtr(GPIO_TEST_M->extModeInfo,
+      &GPIO_TEST_M->SpecialInfo.mappingInfo);
+    rteiSetChecksumsPtr(GPIO_TEST_M->extModeInfo, GPIO_TEST_M->Sizes.checksums);
+    rteiSetTPtr(GPIO_TEST_M->extModeInfo, rtmGetTPtr(GPIO_TEST_M));
   }
 
-  /* Start for MATLABSystem: '<Root>/Digital Input1' */
-  GPIO_test_DW.obj.matlabCodegenIsDeleted = false;
-  GPIO_test_DW.obj.SampleTime = GPIO_test_P.DigitalInput1_SampleTime;
-  GPIO_test_DW.obj.isInitialized = 1L;
-  digitalIOSetup(3, 0);
-  GPIO_test_DW.obj.isSetupComplete = true;
+  GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 0xFF;
+  GPIO_TEST_M->Timing.rtmDbBufWriteBuf1 = 0xFF;
+  GPIO_TEST_M->Timing.rtmDbBufLastBufWr1 = 0;
+
+  /* InitializeConditions for RateTransition: '<Root>/Rate Transition' */
+  GPIO_TEST_DW.RateTransition_Buffer0 =
+    GPIO_TEST_P.RateTransition_InitialCondition;
+  GPIO_TEST_DW.RateTransition_write_buf = -1;
+  GPIO_TEST_DW.RateTransition_read_buf = -1;
+
+  /* SystemInitialize for S-Function (arduinoextint_sfcn): '<Root>/External Interrupt' incorporates:
+   *  SubSystem: '<Root>/Function-Call Subsystem'
+   */
+
+  /* System initialize for function-call system: '<Root>/Function-Call Subsystem' */
+
+  /* Asynchronous task (with no priority assigned)
+   * reads absolute time */
+  switch (GPIO_TEST_M->Timing.rtmDbBufWriteBuf1) {
+   case 0:
+    GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 1;
+    break;
+
+   case 1:
+    GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 0;
+    break;
+
+   default:
+    GPIO_TEST_M->Timing.rtmDbBufReadBuf1 =
+      GPIO_TEST_M->Timing.rtmDbBufLastBufWr1;
+    break;
+  }
+
+  GPIO_TEST_M->Timing.clockTick1 = GPIO_TEST_M->
+    Timing.rtmDbBufClockTick1[GPIO_TEST_M->Timing.rtmDbBufReadBuf1];
+  GPIO_TEST_M->Timing.rtmDbBufReadBuf1 = 0xFF;
+
+  /* InitializeConditions for DiscreteStateSpace: '<S2>/Discrete State Space' */
+  GPIO_TEST_DW.DiscreteStateSpace_DSTATE =
+    GPIO_TEST_P.DiscreteTransferFcnwithinitials;
+
+  /* SystemInitialize for Outport: '<S1>/1' */
+  GPIO_TEST_B.y = GPIO_TEST_P.u_Y0;
+
+  /* Attach callback function */
+  attachInterrupt(digitalPinToInterrupt(2), &MW_ISR_2, FALLING);
+
+  /* End of SystemInitialize for S-Function (arduinoextint_sfcn): '<Root>/External Interrupt' */
+
+  /* Start for MATLABSystem: '<Root>/Analog Input' */
+  GPIO_TEST_DW.obj.matlabCodegenIsDeleted = false;
+  GPIO_TEST_DW.obj.SampleTime = GPIO_TEST_P.AnalogInput_SampleTime;
+  GPIO_TEST_DW.obj.isInitialized = 1L;
+  GPIO_TEST_DW.obj.AnalogInDriverObj.MW_ANALOGIN_HANDLE = MW_AnalogInSingle_Open
+    (54UL);
+  GPIO_TEST_DW.obj.isSetupComplete = true;
+
+  /* Start for MATLABSystem: '<Root>/PWM1' */
+  GPIO_TEST_DW.obj_b.matlabCodegenIsDeleted = false;
+  GPIO_TEST_DW.obj_b.isInitialized = 1L;
+  GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE = MW_PWM_Open(11UL, 0.0, 0.0);
+  GPIO_TEST_DW.obj_b.isSetupComplete = true;
 
   /* Start for MATLABSystem: '<Root>/Digital Output1' */
-  GPIO_test_DW.obj_i.matlabCodegenIsDeleted = false;
-  GPIO_test_DW.obj_i.isInitialized = 1L;
-  digitalIOSetup(12, 1);
-  GPIO_test_DW.obj_i.isSetupComplete = true;
-
-  /* Start for MATLABSystem: '<Root>/Digital Output' */
-  GPIO_test_DW.obj_b.matlabCodegenIsDeleted = false;
-  GPIO_test_DW.obj_b.isInitialized = 1L;
+  GPIO_TEST_DW.obj_j.matlabCodegenIsDeleted = false;
+  GPIO_TEST_DW.obj_j.isInitialized = 1L;
   digitalIOSetup(13, 1);
-  GPIO_test_DW.obj_b.isSetupComplete = true;
+  GPIO_TEST_DW.obj_j.isSetupComplete = true;
 }
 
 /* Model terminate function */
-void GPIO_test_terminate(void)
+void GPIO_TEST_terminate(void)
 {
-  /* Terminate for MATLABSystem: '<Root>/Digital Input1' */
-  if (!GPIO_test_DW.obj.matlabCodegenIsDeleted) {
-    GPIO_test_DW.obj.matlabCodegenIsDeleted = true;
+  /* Terminate for MATLABSystem: '<Root>/Analog Input' */
+  if (!GPIO_TEST_DW.obj.matlabCodegenIsDeleted) {
+    GPIO_TEST_DW.obj.matlabCodegenIsDeleted = true;
+    if ((GPIO_TEST_DW.obj.isInitialized == 1L) &&
+        GPIO_TEST_DW.obj.isSetupComplete) {
+      GPIO_TEST_DW.obj.AnalogInDriverObj.MW_ANALOGIN_HANDLE =
+        MW_AnalogIn_GetHandle(54UL);
+      MW_AnalogIn_Close(GPIO_TEST_DW.obj.AnalogInDriverObj.MW_ANALOGIN_HANDLE);
+    }
   }
 
-  /* End of Terminate for MATLABSystem: '<Root>/Digital Input1' */
+  /* End of Terminate for MATLABSystem: '<Root>/Analog Input' */
 
+  /* Terminate for MATLABSystem: '<Root>/PWM1' */
+  if (!GPIO_TEST_DW.obj_b.matlabCodegenIsDeleted) {
+    GPIO_TEST_DW.obj_b.matlabCodegenIsDeleted = true;
+    if ((GPIO_TEST_DW.obj_b.isInitialized == 1L) &&
+        GPIO_TEST_DW.obj_b.isSetupComplete) {
+      GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE = MW_PWM_GetHandle(11UL);
+      MW_PWM_SetDutyCycle(GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE, 0.0);
+      GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE = MW_PWM_GetHandle(11UL);
+      MW_PWM_Close(GPIO_TEST_DW.obj_b.PWMDriverObj.MW_PWM_HANDLE);
+    }
+  }
+
+  /* End of Terminate for MATLABSystem: '<Root>/PWM1' */
   /* Terminate for MATLABSystem: '<Root>/Digital Output1' */
-  if (!GPIO_test_DW.obj_i.matlabCodegenIsDeleted) {
-    GPIO_test_DW.obj_i.matlabCodegenIsDeleted = true;
+  if (!GPIO_TEST_DW.obj_j.matlabCodegenIsDeleted) {
+    GPIO_TEST_DW.obj_j.matlabCodegenIsDeleted = true;
   }
 
   /* End of Terminate for MATLABSystem: '<Root>/Digital Output1' */
-  /* Terminate for MATLABSystem: '<Root>/Digital Output' */
-  if (!GPIO_test_DW.obj_b.matlabCodegenIsDeleted) {
-    GPIO_test_DW.obj_b.matlabCodegenIsDeleted = true;
-  }
-
-  /* End of Terminate for MATLABSystem: '<Root>/Digital Output' */
 }
 
 /*

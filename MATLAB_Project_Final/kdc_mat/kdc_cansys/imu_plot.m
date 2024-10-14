@@ -1,0 +1,87 @@
+% for i=1:size(AccelForward,1)
+% 
+%     subplot(2,2,3)
+%     % 원형 빨간 점 이동 그리기.
+%     angles = linspace(0, 2*pi, 720); % 720 is the total number of points
+%     radius = 1.5;
+%     xCenter = 0;
+%     yCenter = 0;
+%     x = radius * cos(angles) + xCenter; 
+%     y = radius * sin(angles) + yCenter;
+%     % Plot circle.
+%     plot(x, y, 'b-', 'LineWidth', 1);
+%     % Plot center.
+%     hold on;
+%     plot(xCenter, yCenter, 'k+', 'LineWidth', 2, 'MarkerSize', 16);
+%     grid on;
+%     axis equal;
+%     xlabel('X', 'FontSize', 16);
+%     ylabel('Y', 'FontSize', 16);
+%     plot(AccelForward(i), ... 
+%         AccelLateral(i),'rd')
+%     xlim([-5 5])
+%     ylim([-5 5])
+%     hold off
+%     drawnow
+% 
+%     subplot(2,2,4)
+%     plot(YAW_RATE(idx_ini:idx_end),'b')
+%     hold on
+%     grid on
+%     plot(i,YAW_RATE(i),'go')
+%     hold off
+%     drawnow
+% end
+
+
+clear all; close all; clc
+
+load testset3.mat
+
+idx_ini = find(PosLon ~=0, 1 );
+idx_end = size(PosLon,1);
+
+
+for i=idx_ini:10:idx_end
+    subplot(2,2,1:2)
+    plot(PosLon(idx_ini:idx_end) ...
+    ,PosLat(idx_ini:idx_end))
+hold on
+grid on
+    plot(PosLon(i),PosLat(i),'kd')
+    hold off
+    drawnow
+
+    subplot(2,2,3)
+    % Plot a circle.
+    angles = linspace(0, 2*pi, 720); % 720 is the total number of points
+    radius = 1.5;
+    xCenter = 0;
+    yCenter = 0;
+    x = radius * cos(angles) + xCenter;
+    y = radius * sin(angles) + yCenter;
+    % Plot circle.
+    plot(x, y, 'b-', 'LineWidth', 2);
+    % Plot center.
+    hold on;
+    plot(xCenter, yCenter, 'k+', 'LineWidth', 2, 'MarkerSize', 16);
+    grid on;
+    axis equal;
+    xlabel('X', 'FontSize', 16);
+    ylabel('Y', 'FontSize', 16);
+    plot(AccelForward(i) ...
+        ,AccelLateral(i),'rd')
+    xlim([-5 5])
+    ylim([-5 5])
+    hold off
+    drawnow
+
+    subplot(2,2,4)
+    plot(YAW_RATE(idx_ini:idx_end),'b')
+    hold on;
+    plot(i,YAW_RATE(i),'go')
+    grid on;
+    hold off
+    drawnow
+
+end

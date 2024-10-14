@@ -1,0 +1,387 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>sldemo_hardstopExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_hardstopExample.html</file>
+    <metadata>ex04724144</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0" open="open">sldemo_hardstop.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CaptureVelocityOfABouncingBallMemoryBlockExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CaptureVelocityOfABouncingBallMemoryBlockExample.html</file>
+    <metadata>ex06795615</metadata>
+    <thumbnail>html/CaptureVelocityOfABouncingBallMemoryBlockExample_02.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1534356303" open="open">sldemo_bounce.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_tankExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_tankExample.html</file>
+    <metadata>ex10028204</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1665494446">sldemo_tank.slx</file>
+    <file component="simulink_general" timestamp="1659026306">sldemo_tanksfun.m</file>
+    <file component="simulink_general" timestamp="1666009442">input_SE.mat</file>
+    <file component="simulink_general" timestamp="1682278256">sldemo_tankgui.m</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_foucaultExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_foucaultExample.html</file>
+    <metadata>ex15999235</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1593199913" open="open">sldemo_foucault.slx</file>
+    <file component="simulink_general" timestamp="1538073994">sldemo_foucault_figure1.png</file>
+    <file component="simulink_general" timestamp="1538073994">sldemo_foucault_figure2.png</file>
+    <file component="simulink_general" timestamp="1538073994">sldemo_foucault_data.m</file>
+    <file component="simulink_general" timestamp="1593199913" open="open">sldemo_foucault.slx</file>
+    <file component="simulink_general" timestamp="1555955248">sldemo_foucault_animate.m</file>
+  </demoitem>
+  <demoitem>
+    <source>CollisionAvoidanceAndTrajectoryTrackingOfAMarineVesselExample</source>
+    <project cmSystem="" component="simulink_general" type="main">Marine_Vessel_Dyanmics_Control</project>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex17712517</metadata>
+    <product>matlab</product>
+    <product>aeroblks</product>
+    <product>simulink</product>
+    <product>stateflow</product>
+    <product>uav</product>
+    <product>control</product>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_tc_scriptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_tc_scriptExample.html</file>
+    <metadata>ex18238601</metadata>
+    <thumbnail>html/sldemo_tc_scriptExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1537198771">sldemo_adc_quantize.slx</file>
+    <file component="simulink_general" timestamp="1537198771">sldemo_tc_blocks_data.mat</file>
+    <file component="simulink_general" timestamp="1537198771">sldemo_create_tc_tabledata.m</file>
+    <file component="simulink_general" open="open" timestamp="1537198771">sldemo_tc.slx</file>
+    <file component="simulink_general" timestamp="1537198771">sldemo_tc_blocks.slx</file>
+    <file component="simulink_general" timestamp="1537198771">sldemo_tc_data.mat</file>
+    <file component="simulink_general" timestamp="1537198625">readstdtcdata.m</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_zeroxingExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_zeroxingExample.html</file>
+    <metadata>ex22247857</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0" open="open">sldemo_zeroxing.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>penddemoExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/penddemoExample.html</file>
+    <metadata>ex24313858</metadata>
+    <thumbnail>html/penddemoExample_02.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1686048728">penddemo.slx</file>
+    <file component="simulink_general" timestamp="1686048387">pendan.m</file>
+    <file component="simulink_general" timestamp="1682326313">pendulum1.png</file>
+  </demoitem>
+  <demoitem>
+    <source>CopyConfigurationFromOneModelToAnotherModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex24856309</metadata>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0">sldemo_boiler.slx</file>
+    <file component="simulink_general" timestamp="1551206965">sldemo_bounce.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_wavethd_scriptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_wavethd_scriptExample.html</file>
+    <metadata>ex33418600</metadata>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1567742519">ssinthd.m</file>
+    <file component="simulink_general" open="open" timestamp="1677682255">sldemo_tonegen.slx</file>
+    <file component="simulink_general" timestamp="1677682255">sldemo_tonegen_fixpt.slx</file>
+    <file component="simulink_general" timestamp="1677682255">sldemo_sweeptable_thd.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ModelUsingFSZCDetectionExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex35000890</metadata>
+    <thumbnail>html/ModelUsingFSZCDetectionExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1641565104">ConfigSet.png</file>
+    <file component="simulink_general" timestamp="1639409919">buck_cl_paper.slx</file>
+    <file component="simulink_general" timestamp="1639392629">pwmScope.png</file>
+    <file component="simulink_general" timestamp="1655738296">buck_ol.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_VariableTransportDelayExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_VariableTransportDelayExample.html</file>
+    <metadata>ex36437097</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0" open="open">sldemo_VariableTransportDelay.slx</file>
+    <file component="simulink_general" timestamp="0">VariableTransportDelayCar.png</file>
+    <file component="simulink_general" timestamp="0">VariableTransportDelayPipe.png</file>
+    <file component="simulink_general" timestamp="0">sldemo_VariableTransportDelay_pipe.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_doublebounceExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_doublebounceExample.html</file>
+    <metadata>ex36746556</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1682521703">sldemo_doublebounce.slx</file>
+    <file component="simulink_general" open="open" timestamp="1682521703">sldemo_doublebounce.slx</file>
+    <file component="simulink_general" timestamp="0">simdblBall.m</file>
+    <file component="simulink_general" timestamp="1682278454">dblBallanim.m</file>
+    <file component="simulink_general" timestamp="1682278454">dblBallaniminit.m</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_solversExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_solversExample.html</file>
+    <metadata>ex38020902</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="simulink_general" open="open" timestamp="1600701874">sldemo_solvers.slx</file>
+    <file component="simulink_general" timestamp="1514403092">sldemo_solvers_figure1.png</file>
+    <file component="simulink_general" timestamp="1514403092">sldemo_solvers_figure2.png</file>
+    <file component="simulink_general" timestamp="1514403092">sldemo_solvers_figure3.png</file>
+    <file component="simulink_general" timestamp="1600701874">sldemo_solvers_mcode.m</file>
+    <file component="simulink_general" open="open" timestamp="1600701874">sldemo_solvers.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CopyAndRenameConfigurationSetExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex39983915</metadata>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0">sldemo_boiler.slx</file>
+    <file component="simulink_general" timestamp="1551206965">sldemo_bounce.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_eml_galaxy_scriptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_eml_galaxy_scriptExample.html</file>
+    <metadata>ex46959949</metadata>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1680257433">sldemo_eml_galaxy.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_dblcart1Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_dblcart1Example.html</file>
+    <metadata>ex49773351</metadata>
+    <thumbnail>html/sldemo_dblcart1Example_02.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1652130003">sldemo_dblcart1.slx</file>
+    <file component="simulink_general" timestamp="1652130003">animinit.m</file>
+    <file component="simulink_general" timestamp="1652130003">crtanim2.m</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_metroExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_metroExample.html</file>
+    <metadata>ex54579691</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1515618247">sldemo_metro.slx</file>
+    <file component="simulink_general" timestamp="0">sldemo_metro_three_pend_and_base.png</file>
+    <file component="simulink_general" timestamp="1680526379">pendan.m</file>
+    <file component="simulink_general" timestamp="1682278911">msfun_metronomean.m</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_bounceExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_bounceExample.html</file>
+    <metadata>ex58379408</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1654256370">sldemo_bounce.slx</file>
+    <file component="simulink_general" timestamp="1655833639">sldemo_bounce_overview.png</file>
+    <file component="simulink_general" timestamp="1654256370">sldemo_bounce_two_integrators.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_foucault_vrExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_foucault_vrExample.html</file>
+    <metadata>ex59479572</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="0">sldemo_foucault_vr.slx</file>
+    <file component="simulink_general" timestamp="1673872115">foucault_bob.wrl</file>
+    <file component="simulink_general" timestamp="1673872115">foucault_earth.wrl</file>
+    <file component="simulink_general" timestamp="1673872115">foucault_earth_36.wrl</file>
+    <file component="simulink_general" timestamp="1673872115">foucault_scene.wrl</file>
+    <dir component="simulink_general" timestamp="1673872115">texture</dir>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_countersExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_countersExample.html</file>
+    <metadata>ex63811628</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="0" open="open">sldemo_counters.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SaveAndRestoreAnOperatingPointExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex67023741</metadata>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" timestamp="1567742519">sldemo_tonegen.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_househeatExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_househeatExample.html</file>
+    <metadata>ex72293157</metadata>
+    <thumbnail>html/sldemo_househeatExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1685370721">sldemo_househeat.slx</file>
+    <file component="simulink_general" timestamp="1665052265">sldemo_househeat_data.m</file>
+    <file component="simulink_general" timestamp="1673591257">HouseHeatHousePix.svg</file>
+    <file component="simulink_general" timestamp="1673591257">HouseHeatThermostatPix.svg</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_hydcylExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_hydcylExample.html</file>
+    <metadata>ex75765238</metadata>
+    <thumbnail>html/sldemo_hydcylExample_01.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1540496744">sldemo_hydcyl.slx</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl_figure1.png</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl_figure2.png</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl_figure3.png</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl4.slx</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl_data.mat</file>
+    <file component="simulink_general" timestamp="1603725927">sldemo_hydrod.slx</file>
+    <file component="repository/simulink" timestamp="1680467934">hydlib.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_bangbangExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_bangbangExample.html</file>
+    <metadata>ex76773778</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1559523468">sldemo_bangbang.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_hydrodExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_hydrodExample.html</file>
+    <metadata>ex80520619</metadata>
+    <thumbnail>html/sldemo_hydrodExample_01.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1603725927">sldemo_hydrod.slx</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl4.slx</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl.slx</file>
+    <file component="simulink_general" timestamp="1540496744">sldemo_hydcyl_data.mat</file>
+    <file component="repository/simulink" timestamp="1680467934">hydlib.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>VanDerPolOscillatorExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/VanDerPolOscillatorExample.html</file>
+    <metadata>ex88433679</metadata>
+    <thumbnail>html/VanDerPolOscillatorExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="repository/simulink" open="open" timestamp="1649875075">vdp.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_hydcyl4Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_hydcyl4Example.html</file>
+    <metadata>ex93947771</metadata>
+    <thumbnail>html/sldemo_hydcyl4Example_01.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1533316811">sldemo_hydcyl4.slx</file>
+    <file component="simulink_general" timestamp="1533316811">sldemo_hydcyl.slx</file>
+    <file component="simulink_general" timestamp="1533316811">sldemo_hydrod.slx</file>
+    <file component="simulink_general" timestamp="1533316811">sldemo_hydcyl_data.mat</file>
+    <file component="repository/simulink" timestamp="1680467934">hydlib.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>sldemo_boilerExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/sldemo_boilerExample.html</file>
+    <metadata>ex99526584</metadata>
+    <hideCode/>
+    <product>matlab</product>
+    <product>simulink</product>
+    <file component="simulink_general" open="open" timestamp="1683646938">sldemo_boiler.slx</file>
+  </demoitem>
+</demos>

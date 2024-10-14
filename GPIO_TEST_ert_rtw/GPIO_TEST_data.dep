@@ -1,29 +1,35 @@
-GPIO_test_data.o: \
- C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\GPIO_test_data.c \
- C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\GPIO_test.h \
- C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\rtwtypes.h \
+GPIO_TEST_data.o: \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\GPIO_TEST_data.c \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\GPIO_TEST.h \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_extmode.h \
- C:/Users/FM23/Documents/MATLAB/GPIO_test_ert_rtw/rtwtypes.h \
+ C:/Users/FM23/Documents/MATLAB/GPIO_TEST_ert_rtw/rtwtypes.h \
  C:/PROGRA~1/MATLAB/R2023b/simulink/include/sysran_types.h \
  C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_continuous.h \
  C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_solver.h \
  C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_continuous.h \
- C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduino_digitalio.h \
- C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\GPIO_test_types.h \
- C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\MW_target_hardware_resources.h \
- C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include/MW_ArduinoHWInit.h \
- C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include/arduinoAVRScheduler.h \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduinoextint.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/cores/arduino/Arduino.h \
  C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/cores/arduino/binary.h \
- C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/variants/mega/pins_arduino.h
+ C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/variants/mega/pins_arduino.h \
+ C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_AnalogIn.h \
+ C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduino_digitalio.h \
+ C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_PWM.h \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\GPIO_TEST_types.h \
+ C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SVD.h \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\rt_nonfinite.h \
+ C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\MW_target_hardware_resources.h \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include/MW_ArduinoHWInit.h \
+ C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include/arduinoAVRScheduler.h
 
-C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\GPIO_test.h:
+C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\GPIO_TEST.h:
 
-C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\rtwtypes.h:
+C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_extmode.h:
 
-C:/Users/FM23/Documents/MATLAB/GPIO_test_ert_rtw/rtwtypes.h:
+C:/Users/FM23/Documents/MATLAB/GPIO_TEST_ert_rtw/rtwtypes.h:
 
 C:/PROGRA~1/MATLAB/R2023b/simulink/include/sysran_types.h:
 
@@ -33,18 +39,30 @@ C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_solver.h:
 
 C:/PROGRA~1/MATLAB/R2023b/simulink/include/rtw_continuous.h:
 
-C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduino_digitalio.h:
-
-C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\GPIO_test_types.h:
-
-C:\Users\FM23\Documents\MATLAB\GPIO_test_ert_rtw\MW_target_hardware_resources.h:
-
-C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include/MW_ArduinoHWInit.h:
-
-C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include/arduinoAVRScheduler.h:
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduinoextint.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/cores/arduino/Arduino.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/cores/arduino/binary.h:
 
 C:/ProgramData/MATLAB/SupportPackages/R2023b/aIDE/hardware/arduino/avr/variants/mega/pins_arduino.h:
+
+C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_AnalogIn.h:
+
+C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~2/include/MW_arduino_digitalio.h:
+
+C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_PWM.h:
+
+C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\GPIO_TEST_types.h:
+
+C:/PROGRA~1/MATLAB/R2023b/toolbox/target/shared/svd/common/include/MW_SVD.h:
+
+C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\rt_nonfinite.h:
+
+C:\Users\FM23\Documents\MATLAB\GPIO_TEST_ert_rtw\MW_target_hardware_resources.h:
+
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/include/MW_ArduinoHWInit.h:
+
+C:/PROGRA~3/MATLAB/SUPPOR~1/R2023b/toolbox/target/SUPPOR~1/ARDUIN~1/SCHEDU~1/include/arduinoAVRScheduler.h:

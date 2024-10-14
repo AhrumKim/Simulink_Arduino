@@ -3,13 +3,13 @@
  * course requirements at degree granting institutions only.  Not for
  * government, commercial, or other organizational use.
  *
- * File: GPIO_test.h
+ * File: GPIO_TEST.h
  *
- * Code generated for Simulink model 'GPIO_test'.
+ * Code generated for Simulink model 'GPIO_TEST'.
  *
- * Model version                  : 1.1
+ * Model version                  : 1.2
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Fri Oct 11 14:35:12 2024
+ * C/C++ source code generated on : Mon Oct 14 13:46:13 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -17,19 +17,23 @@
  * Validation result: Not run
  */
 
-#ifndef RTW_HEADER_GPIO_test_h_
-#define RTW_HEADER_GPIO_test_h_
-#ifndef GPIO_test_COMMON_INCLUDES_
-#define GPIO_test_COMMON_INCLUDES_
+#ifndef RTW_HEADER_GPIO_TEST_h_
+#define RTW_HEADER_GPIO_TEST_h_
+#ifndef GPIO_TEST_COMMON_INCLUDES_
+#define GPIO_TEST_COMMON_INCLUDES_
 #include "rtwtypes.h"
 #include "rtw_extmode.h"
 #include "sysran_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
+#include "MW_arduinoextint.h"
+#include "MW_AnalogIn.h"
 #include "MW_arduino_digitalio.h"
-#endif                                 /* GPIO_test_COMMON_INCLUDES_ */
+#include "MW_PWM.h"
+#endif                                 /* GPIO_TEST_COMMON_INCLUDES_ */
 
-#include "GPIO_test_types.h"
+#include "GPIO_TEST_types.h"
+#include "rt_nonfinite.h"
 #include "MW_target_hardware_resources.h"
 
 /* Macros for accessing real-time model data structure */
@@ -47,10 +51,6 @@
 
 #ifndef rtmSetErrorStatus
 #define rtmSetErrorStatus(rtm, val)    ((rtm)->errorStatus = (val))
-#endif
-
-#ifndef rtmStepTask
-#define rtmStepTask(rtm, idx)          ((rtm)->Timing.TaskCounters.TID[(idx)] == 0)
 #endif
 
 #ifndef rtmGetStopRequested
@@ -77,49 +77,59 @@
 #define rtmGetTPtr(rtm)                (&(rtm)->Timing.taskTime0)
 #endif
 
-#ifndef rtmTaskCounter
-#define rtmTaskCounter(rtm, idx)       ((rtm)->Timing.TaskCounters.TID[(idx)])
-#endif
-
 /* Block signals (default storage) */
 typedef struct {
-  real_T PulseGenerator;               /* '<Root>/Pulse Generator' */
-  boolean_T NOT;                       /* '<Root>/NOT' */
-} B_GPIO_test_T;
+  real_T RateTransition;               /* '<Root>/Rate Transition' */
+  real_T y;                            /* '<S1>/MATLAB Function' */
+  uint8_T DataTypeConversion;          /* '<Root>/Data Type Conversion' */
+} B_GPIO_TEST_T;
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  codertarget_arduinobase_block_T obj; /* '<Root>/Digital Input1' */
-  codertarget_arduinobase_blo_o_T obj_i;/* '<Root>/Digital Output1' */
-  codertarget_arduinobase_blo_o_T obj_b;/* '<Root>/Digital Output' */
-  struct {
-    void *LoggedData;
-  } Scope_PWORK;                       /* '<Root>/Scope' */
-
-  int32_T clockTickCounter;            /* '<Root>/Pulse Generator' */
-} DW_GPIO_test_T;
+  codertarget_arduinobase_inter_T obj; /* '<Root>/Analog Input' */
+  codertarget_arduinobase_block_T obj_j;/* '<Root>/Digital Output1' */
+  codertarget_arduinobase_int_a_T obj_b;/* '<Root>/PWM1' */
+  real_T DiscreteStateSpace_DSTATE;    /* '<S2>/Discrete State Space' */
+  volatile real_T RateTransition_Buffer0;/* '<Root>/Rate Transition' */
+  volatile real_T RateTransition_Buffer1;/* '<Root>/Rate Transition' */
+  volatile int8_T RateTransition_write_buf;/* '<Root>/Rate Transition' */
+  volatile int8_T RateTransition_read_buf;/* '<Root>/Rate Transition' */
+  volatile int8_T RateTransition_last_buf_wr;/* '<Root>/Rate Transition' */
+  int8_T FunctionCallSubsystem_SubsysRan;/* '<Root>/Function-Call Subsystem' */
+  uint8_T is_active_c2_GPIO_TEST;      /* '<S1>/MATLAB Function' */
+} DW_GPIO_TEST_T;
 
 /* Parameters (default storage) */
-struct P_GPIO_test_T_ {
-  real_T DigitalInput1_SampleTime;     /* Expression: 0.1
-                                        * Referenced by: '<Root>/Digital Input1'
+struct P_GPIO_TEST_T_ {
+  real_T DiscreteTransferFcnwithinitials;
+                              /* Mask Parameter: DiscreteTransferFcnwithinitials
+                               * Referenced by: '<S2>/Discrete State Space'
+                               */
+  real_T AnalogInput_SampleTime;       /* Expression: -1
+                                        * Referenced by: '<Root>/Analog Input'
                                         */
-  real_T PulseGenerator_Amp;           /* Expression: 1
-                                        * Referenced by: '<Root>/Pulse Generator'
+  real_T u_Y0;                         /* Computed Parameter: u_Y0
+                                        * Referenced by: '<S1>/1'
                                         */
-  real_T PulseGenerator_Period;     /* Computed Parameter: PulseGenerator_Period
-                                     * Referenced by: '<Root>/Pulse Generator'
-                                     */
-  real_T PulseGenerator_Duty;         /* Computed Parameter: PulseGenerator_Duty
-                                       * Referenced by: '<Root>/Pulse Generator'
-                                       */
-  real_T PulseGenerator_PhaseDelay;    /* Expression: 0
-                                        * Referenced by: '<Root>/Pulse Generator'
+  real_T Constant_Value;               /* Expression: 1
+                                        * Referenced by: '<S1>/Constant'
+                                        */
+  real_T DiscreteStateSpace_A;       /* Computed Parameter: DiscreteStateSpace_A
+                                      * Referenced by: '<S2>/Discrete State Space'
+                                      */
+  real_T DiscreteStateSpace_C;       /* Computed Parameter: DiscreteStateSpace_C
+                                      * Referenced by: '<S2>/Discrete State Space'
+                                      */
+  real_T RateTransition_InitialCondition;/* Expression: 0
+                                          * Referenced by: '<Root>/Rate Transition'
+                                          */
+  uint16_T Gain_Gain;                  /* Computed Parameter: Gain_Gain
+                                        * Referenced by: '<Root>/Gain'
                                         */
 };
 
 /* Real-time Model Data Structure */
-struct tag_RTM_GPIO_test_T {
+struct tag_RTM_GPIO_TEST_T {
   const char_T *errorStatus;
   RTWExtModeInfo *extModeInfo;
 
@@ -151,36 +161,32 @@ struct tag_RTM_GPIO_test_T {
     time_T taskTime0;
     uint32_T clockTick0;
     time_T stepSize0;
-    uint16_T clockTick1;
-    struct {
-      uint8_T TID[2];
-    } TaskCounters;
-
+    uint32_T clockTick1;
+    uint8_T rtmDbBufReadBuf1;
+    uint8_T rtmDbBufWriteBuf1;
+    boolean_T rtmDbBufLastBufWr1;
+    uint32_T rtmDbBufClockTick1[2];
     time_T tFinal;
     boolean_T stopRequestedFlag;
   } Timing;
 };
 
 /* Block parameters (default storage) */
-extern P_GPIO_test_T GPIO_test_P;
+extern P_GPIO_TEST_T GPIO_TEST_P;
 
 /* Block signals (default storage) */
-extern B_GPIO_test_T GPIO_test_B;
+extern B_GPIO_TEST_T GPIO_TEST_B;
 
 /* Block states (default storage) */
-extern DW_GPIO_test_T GPIO_test_DW;
-
-/* External function called from main */
-extern void GPIO_test_SetEventsForThisBaseStep(boolean_T *eventFlags);
+extern DW_GPIO_TEST_T GPIO_TEST_DW;
 
 /* Model entry point functions */
-extern void GPIO_test_initialize(void);
-extern void GPIO_test_step0(void);
-extern void GPIO_test_step1(void);
-extern void GPIO_test_terminate(void);
+extern void GPIO_TEST_initialize(void);
+extern void GPIO_TEST_step(void);
+extern void GPIO_TEST_terminate(void);
 
 /* Real-time Model object */
-extern RT_MODEL_GPIO_test_T *const GPIO_test_M;
+extern RT_MODEL_GPIO_TEST_T *const GPIO_TEST_M;
 extern volatile boolean_T stopRequested;
 extern volatile boolean_T runModel;
 
@@ -198,9 +204,12 @@ extern volatile boolean_T runModel;
  *
  * Here is the system hierarchy for this model
  *
- * '<Root>' : 'GPIO_test'
+ * '<Root>' : 'GPIO_TEST'
+ * '<S1>'   : 'GPIO_TEST/Function-Call Subsystem'
+ * '<S2>'   : 'GPIO_TEST/Function-Call Subsystem/Discrete Transfer Fcn (with initial states)'
+ * '<S3>'   : 'GPIO_TEST/Function-Call Subsystem/MATLAB Function'
  */
-#endif                                 /* RTW_HEADER_GPIO_test_h_ */
+#endif                                 /* RTW_HEADER_GPIO_TEST_h_ */
 
 /*
  * File trailer for generated code.
