@@ -1,0 +1,11 @@
+rtGetInf.o: \
+ C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rtGetInf.c \
+ C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rtwtypes.h \
+ C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rtGetInf.h \
+ C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rt_nonfinite.h
+
+C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rtwtypes.h:
+
+C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rtGetInf.h:
+
+C:\Users\FM23\Documents\MATLAB\Hardware_Encoder\DCmotor_Speed_Ctrl_ert_rtw\rt_nonfinite.h:
