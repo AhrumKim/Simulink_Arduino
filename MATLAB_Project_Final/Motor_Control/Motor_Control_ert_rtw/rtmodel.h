@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Motor_Control'.
  *
- * Model version                  : 1.7
+ * Model version                  : 1.9
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Mon Oct 14 14:57:06 2024
+ * C/C++ source code generated on : Tue Oct 15 14:55:28 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR

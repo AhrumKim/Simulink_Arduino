@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'DCmotor_Speed_Ctrl'.
  *
- * Model version                  : 1.14
+ * Model version                  : 1.15
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Oct 15 14:09:37 2024
+ * C/C++ source code generated on : Tue Oct 15 14:40:04 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -1141,10 +1141,10 @@ void DCmotor_Speed_Ctrl_initialize(void)
   DCmotor_Speed_Ctrl_M->Timing.stepSize0 = 0.01;
 
   /* External mode info */
-  DCmotor_Speed_Ctrl_M->Sizes.checksums[0] = (2971833354U);
-  DCmotor_Speed_Ctrl_M->Sizes.checksums[1] = (1019605947U);
-  DCmotor_Speed_Ctrl_M->Sizes.checksums[2] = (1275461001U);
-  DCmotor_Speed_Ctrl_M->Sizes.checksums[3] = (1476656704U);
+  DCmotor_Speed_Ctrl_M->Sizes.checksums[0] = (1797985044U);
+  DCmotor_Speed_Ctrl_M->Sizes.checksums[1] = (2887827349U);
+  DCmotor_Speed_Ctrl_M->Sizes.checksums[2] = (2173396588U);
+  DCmotor_Speed_Ctrl_M->Sizes.checksums[3] = (3819822318U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

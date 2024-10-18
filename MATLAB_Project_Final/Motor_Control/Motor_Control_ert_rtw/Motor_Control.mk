@@ -2,7 +2,7 @@
 ## Makefile generated for component 'Motor_Control'. 
 ## 
 ## Makefile     : Motor_Control.mk
-## Generated on : Mon Oct 14 14:57:08 2024
+## Generated on : Tue Oct 15 14:55:31 2024
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Motor_Control.elf
 ## Product type : executable
 ## 
@@ -21,7 +21,7 @@ MAKEFILE                  = Motor_Control.mk
 MATLAB_ROOT               = C:/PROGRA~1/MATLAB/R2023b
 MATLAB_BIN                = C:/PROGRA~1/MATLAB/R2023b/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = C:/Users/FM23/Documents/MATLAB/MATLAB_Project/Motor_Control
+START_DIR                 = C:/Users/FM23/Documents/MATLAB/MATLAB_Project_Final/Motor_Control
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

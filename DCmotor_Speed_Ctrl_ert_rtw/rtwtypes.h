@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'DCmotor_Speed_Ctrl'.
  *
- * Model version                  : 1.14
+ * Model version                  : 1.15
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Tue Oct 15 14:09:37 2024
+ * C/C++ source code generated on : Tue Oct 15 14:40:04 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR

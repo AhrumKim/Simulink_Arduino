@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'Motor_Control'.
  *
- * Model version                  : 1.7
+ * Model version                  : 1.9
  * Simulink Coder version         : 23.2 (R2023b) 01-Aug-2023
- * C/C++ source code generated on : Mon Oct 14 14:57:06 2024
+ * C/C++ source code generated on : Tue Oct 15 14:55:28 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Atmel->AVR
@@ -274,10 +274,10 @@ void Motor_Control_initialize(void)
   Motor_Control_M->Timing.stepSize0 = 0.01;
 
   /* External mode info */
-  Motor_Control_M->Sizes.checksums[0] = (784569362U);
-  Motor_Control_M->Sizes.checksums[1] = (1953096788U);
-  Motor_Control_M->Sizes.checksums[2] = (2459466121U);
-  Motor_Control_M->Sizes.checksums[3] = (750731350U);
+  Motor_Control_M->Sizes.checksums[0] = (3807967733U);
+  Motor_Control_M->Sizes.checksums[1] = (622965610U);
+  Motor_Control_M->Sizes.checksums[2] = (754208880U);
+  Motor_Control_M->Sizes.checksums[3] = (1366633250U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
